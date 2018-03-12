@@ -2,7 +2,7 @@
 
 - all my junk scripts 
 
-## bucket finder
+## Bucket Finder
 
   - s3 bucket finder
   
@@ -15,3 +15,4 @@
     - self domain
     - cdn service 
     - detail can be found at https://bitrot.sh/post/30-11-2017-domain-fronting-with-meterpreter/
+    - Usage : python df.py -H $HOST -f $domain-file -v $CDN vendor
