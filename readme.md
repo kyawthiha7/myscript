@@ -2,11 +2,11 @@
 
 - all my junk scripts 
 
-## Bucket Finder
+## 1.  Bucket Finder Script
 
   - s3 bucket finder
   
-## Domain Fronting Script
+## 2. Domain Fronting Script
 
   - Domain Lists can be found @ https://github.com/vysec/DomainFrontingListsa
   - Script Idea derive from https://github.com/yeyintminthuhtut/Lazy-RedTeamer-Scripts
