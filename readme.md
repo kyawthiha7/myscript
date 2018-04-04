@@ -8,7 +8,7 @@
   
 ## 2. Domain Fronting Script
 
-  - Domain Lists can be found @ https://github.com/vysec/DomainFrontingListsa
+  - Domain Lists can be found @ https://github.com/vysec/DomainFrontingLists
   - Script Idea derive from https://github.com/yeyintminthuhtut/Lazy-RedTeamer-Scripts
   
   ### prerequisite
