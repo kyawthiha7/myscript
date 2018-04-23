@@ -7,7 +7,7 @@ import argparse
 
 
 print('''### domain fronting finder
-### domain lists can be found @ https://github.com/vysec/DomainFrontingListsa
+### domain lists can be found @ https://github.com/vysec/DomainFrontingLists
 ### script idea derive from https://github.com/yeyintminthuhtut/Lazy-RedTeamer-Scripts\n''')
 
 if len(sys.argv) == 1:
