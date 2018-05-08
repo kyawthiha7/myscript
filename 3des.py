@@ -33,10 +33,10 @@ if len(sys.argv) == 1:
 
 parser = optparse.OptionParser(description= "Triple DES Encrypt Decrypt Script ", prog="3des.py")
 
-parser.add_option('-d','--decrypt',dest='decrypt',action="store_true",help='Triple DES Decrpyt Method') 
-parser.add_option('-e','--encrypt',dest='encrpyt',action="store_true",help='Triple DES Encrpyt Method')
+parser.add_option('-d','--decrypt',dest='decrypt',action="store_true",help='Triple DES Decrypt Method') 
+parser.add_option('-e','--encrypt',dest='encrpyt',action="store_true",help='Triple DES Encrypt Method')
 parser.add_option('-c','--cipher',dest='cipher',help='Cipher Text')
-parser.add_option('-t','--text',dest='text', type='string',help='String to encrpyt')
+parser.add_option('-t','--text',dest='text', type='string',help='String to encrypt')
 
 options, args = parser.parse_args()
 
