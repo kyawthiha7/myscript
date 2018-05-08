@@ -48,10 +48,10 @@ options, args = parser.parse_args()
 
 if (options.encrypt):
 	ctext = options.text
-	m = des(key,IV)
-	print m.encrypt(ctext)
+	new = des(key,IV)
+	print new.encrypt(ctext)
 
 if (options.decrypt):
 	ctext = options.cipher
-	m = des(key,IV)
-	print m.decrypt(ctext)
+	new = des(key,IV)
+	print new.decrypt(ctext)
