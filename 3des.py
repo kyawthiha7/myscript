@@ -15,7 +15,6 @@ def unpad(string):
 def encrypt(string):
 	pad_len = 8 -len(string) %8
 	pad = string+chr(pad_len) * pad_len
-	print pad
         cipher = DES3.new(key, DES3.MODE_CBC, IV)
         ctext = cipher.encrypt(pad)
         return base64.b64encode(ctext)	
@@ -46,4 +45,4 @@ if (options.encrypt):
 
 if (options.decrypt):
 	ctext = options.cipher
-	print decrypt(ctext)
+	decrypt(ctext)
