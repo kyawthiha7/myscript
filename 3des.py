@@ -7,34 +7,27 @@ import optparse
 key = 'abcdefghijklmnop'
 IV = 'ABCDEFGH'
 
-class des:
-	def __init__(self, key, IV, mode=_des.MODE_CBC):
-		self.key = key
-		self.IV = IV
-		self.mode = mode
-		self.size = 8
+def unpad(self, string):
+	pad_size = ord(string[-1])
+	print "padding size : " +str(pad_size)
+	print "decrypted string : " +string[:-pad_size]
+def encrypt(string):
+	pad_len = 8 -len(string) %8
+	pad = string+chr(pad_len) * pad_len
+	print pad
+        cipher = DES3.new(key, DES3.MODE_CBC, IV)
+        ctext = cipher.encrypt(pad)
+        return base64.b64encode(ctext)	
 
-	def encrypt(self,string):
-		length = 8 - len(string) % 8
-		pad = chr(length) * length
-		new = string + pad
-		cipher = _des.new(self.key, self.mode, self.IV)
-		data = cipher.encrypt(new)
-		return base64.b64encode(data)
+def decrypt(string):
+	encrypt = DES3.new(key, DES3.MODE_CBC, IV)
+	decode_string = base64.b64decode(string)
+	plaintext = encrypt.decrypt(decode_string)
+	return unpad(plaintext)
 
-	def unpad(self, string):
-		pad_size = ord(string[-1])
-		print "padding size : " +str(pad_size)
-		print "decrypted string : " +string[:-pad_size]
-
-	def decrypt(self,string):
-		encrypt = _des.new(key, _des.MODE_CBC, IV)
-		decode_string = base64.b64decode(string)
-		plaintext = encrypt.decrypt(decode_string)
-		return self.unpad(plaintext)
 
 if len(sys.argv) == 1:
-	print "Usage : python 3des.py -d/e -c cipher -t test"
+	print "Usage : python 3des.py -d/e -c cipher -t text"
 	sys.exit()
 
 parser = optparse.OptionParser(description= "Triple DES Encrypt Decrypt Script ", prog="3des.py")
@@ -48,10 +41,8 @@ options, args = parser.parse_args()
 
 if (options.encrypt):
 	ctext = options.text
-	new = des(key,IV)
-	print new.encrypt(ctext)
+	print encrypt(ctext)
 
 if (options.decrypt):
 	ctext = options.cipher
-	new = des(key,IV)
-	print new.decrypt(ctext)
+	print decrypt(ctext)
