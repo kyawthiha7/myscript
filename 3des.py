@@ -1,4 +1,4 @@
-from Crypto.Cipher import DES3 as _des
+from Crypto.Cipher import DES3 
 import base64
 import sys
 import argparse
@@ -7,10 +7,11 @@ import optparse
 key = 'abcdefghijklmnop'
 IV = 'ABCDEFGH'
 
-def unpad(self, string):
+def unpad(string):
 	pad_size = ord(string[-1])
 	print "padding size : " +str(pad_size)
 	print "decrypted string : " +string[:-pad_size]
+	
 def encrypt(string):
 	pad_len = 8 -len(string) %8
 	pad = string+chr(pad_len) * pad_len
