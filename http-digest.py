@@ -2,6 +2,7 @@ import hashlib
 import sys
 
 # change the variable of qop, method_uri , realm , nc , nonce, user ,response , cnonce from authorization http header 
+# generate own dictionary file or use pre-generate file 
 
 filename = sys.argv[1]
 wd  = open(filename, 'r')
