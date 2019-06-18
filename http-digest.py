@@ -1,11 +1,13 @@
 import hashlib
 import sys
 
+# change the variable of qop, method_uri , realm , nc , nonce, user ,response , cnonce from authorization http header 
+
 filename = sys.argv[1]
 wd  = open(filename, 'r')
 words = wd.readlines()
-realm = "ogsc test"
-method_uri = "GET:/downloadB2B/test141/Update/updateInfo_50101.xml"
+realm = "test application"
+method_uri = "GET:/downloadB2B/test141/Update/updateInfo_50101.xml" 
 qop = "auth"
 nc = "00000001"
 nonce = "SkAhfJKLBQA=4a246892b5049100b7e67ddc1c20c6106a7456d5"
