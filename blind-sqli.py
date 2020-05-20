@@ -40,7 +40,7 @@ def sqli(sql):
 
     print result
     
-parser = OptionParser(usage="usage: %prog [-D/-t/-c/-d] -u http://10.10.10.10/login.php -m 'Unknown USER' ")
+parser = OptionParser(usage="usage: %prog [-D/-t/-c tablename/-d columnname] -u http://10.10.10.10/login.php -m 'Unknown USER' ")
 parser.add_option("-D","--database",action="store_true",dest="database", help="List of Databases")
 parser.add_option("-t","--table",action="store_true", dest="table", help="List of Tables")
 parser.add_option("-c","--column",action="store_true", dest="column", help="List of Columns")
